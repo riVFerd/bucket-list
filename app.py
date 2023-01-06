@@ -9,7 +9,7 @@ load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 
-db = MongoClient(os.environ.get('MONGODB_URI'))['DB_NAME']
+db = MongoClient(os.environ.get('MONGODB_URI'))[os.environ.get('DB_NAME')]
 
 @app.route('/')
 def home():
